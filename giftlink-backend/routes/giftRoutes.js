@@ -14,10 +14,7 @@ router.get('/:id', async (req, res) => {
     try {
         const db = await connectToDatabase();
         const collection = db.collection("gifts");
-
-        const id = req.params.id;
-
-        // Task 3: Find a specific gift by ID using the collection.fineOne method and store in constant called gift
+        const id = req.params.id; 
         const gift = await collection.findOne({ id: id });
 
         if (!gift) {
