@@ -5,7 +5,7 @@ import { urlConfig } from '../../config';
 
 function DetailsPage() {
     const navigate = useNavigate();
-    const { productId } = useParams();
+    const { id } = useParams();
     const [gift, setGift] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -20,7 +20,7 @@ function DetailsPage() {
         // get the gift to be rendered on the details page
         const fetchGift = async () => {
             try {
-                const response = await fetch(`${urlConfig.backendUrl}/api/gifts/${productId}`);
+                const response = await fetch(`${urlConfig.backendUrl}/api/gifts/${id}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -37,7 +37,7 @@ function DetailsPage() {
 
         window.scrollTo(0, 0);
 
-    }, [productId]);
+    }, [id]);
 
 
     const handleBackClick = () => {

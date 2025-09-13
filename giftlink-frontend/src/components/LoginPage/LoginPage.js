@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './LoginPage.css';
+import { urlConfig } from "../../config";
 import { useAppContext } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -21,7 +22,7 @@ function LoginPage() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`/api/auth/login`, {
+            const response = await fetch(`${urlConfig.backendUrl}/api/auth/login`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

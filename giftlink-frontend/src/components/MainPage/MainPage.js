@@ -26,9 +26,8 @@ function MainPage() {
         fetchGifts();
     }, []);
 
-    const goToDetailsPage = (productId) => {
-        navigate(`/app/product/${productId}`);
-
+    const goToDetailsPage = (id) => {
+        navigate(`/app/product/${id}`);
     };
 
     const formatDate = (timestamp) => {
