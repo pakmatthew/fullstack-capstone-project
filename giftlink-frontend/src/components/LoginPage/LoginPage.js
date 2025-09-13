@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './LoginPage.css';
-import { urlConfig } from "../../config";
 import { useAppContext } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -33,7 +32,7 @@ function LoginPage() {
                     password: password,
                 })
             })
-            const json = await res.json();
+            const json = await response.json();
             if (json.authtoken) {
                 sessionStorage.setItem('auth-token', json.authtoken);
                 sessionStorage.setItem('name', json.userName);
