@@ -37,7 +37,7 @@ function DetailsPage() {
 
         window.scrollTo(0, 0);
 
-    }, [id]);
+    }, [id, navigate]);
 
 
     const handleBackClick = () => {
